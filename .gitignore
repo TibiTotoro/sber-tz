@@ -1,0 +1,9 @@
+.idea/
+
+node_modules/
+src/**/*.jsx
+# Project
+.eslintcache
+.stylelintcache
+build/
+*.iml

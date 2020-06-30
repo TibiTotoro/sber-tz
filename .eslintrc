@@ -1,0 +1,59 @@
+{ "parser": "babel-eslint",  
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:compat/recommended",
+    "plugin:import/typescript",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    // OFF RULES
+    "import/prefer-default-export": "off",
+    // ERROR RULES
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
+    "max-lines": ["error", { "max": 300, "skipBlankLines": true }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "mjs": "never"
+      }
+    ]
+  },  
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:js && npm run lint:css"
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "globals": {},
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".json"],
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    },
+    "polyfills": ["Promise", "promises"]
+  }
+}
