@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "forceAllTransforms": true,
+        "corejs": {
+          "version": 3
+        },
+        "targets": {
+          "node": "10",
+          "browsers": ["last 2 versions", "ie >= 11"]
+        }
+      }     
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+  ]
+}
+
