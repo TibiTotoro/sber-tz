@@ -115,7 +115,7 @@ module.exports = (env, argv) => ({
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Тдыц',
+            title: 'Сбербанк - тестовое',
             meta: {
               description:
                 'Сбербанк - тестовое',             
