@@ -1,7 +1,7 @@
 import React, { useEffect, useState, createContext } from 'react';
 
-import { API_URL, START_DATE, TODAY, TIME_INTERVAL } from '../API/const';
-import { formatDate } from '../API/utils';
+import { API_URL, START_DATE, TODAY, TIME_INTERVAL, BASE_CUR } from '~src/API/const';
+import { formatDate } from '~src/utils';
 
 const RateContext = createContext(null);
 
@@ -15,7 +15,7 @@ const RateProvider = ({ children }) => {
     }
     const id = setTimeout(() => {
       async function subscribe() {
-        const response = await fetch(`${API_URL}${formatDate(date)}`);
+        const response = await fetch(`${API_URL}${formatDate(date)}?base=${BASE_CUR}`);
         if (response.status === 502) {
           await subscribe();
         } else if (!response.ok) {

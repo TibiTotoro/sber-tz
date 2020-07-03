@@ -105,11 +105,17 @@ module.exports = (env, argv) => ({
         open: 'Chrome',
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.scss'],      
+        extensions: ['.js', '.jsx', '.json', '.scss'],  
+        alias: {
+            '~src': path.resolve(__dirname, "src"),
+            '~copmponents': path.resolve(__dirname, "src/copmponents"),
+            '~styles': path.resolve(__dirname, "src/styles/"),
+            '~context': path.resolve(__dirname, "src/context/"),
+        }    
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Сбербанк - тестовое',
+            title: 'Тдыц',
             meta: {
               description:
                 'Сбербанк - тестовое',             

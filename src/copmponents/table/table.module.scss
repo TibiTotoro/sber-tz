@@ -1,0 +1,26 @@
+@import '~styles/variables.scss';
+
+.wrapper {
+  max-width: 600px;
+}
+
+.row {
+  display: flex;
+  border: 1px solid $color_border;
+  &:not(:last-child) {
+    border-bottom: 0px;
+  }
+}
+
+.col {
+  padding: 10px;
+  width: 33.3333333%;
+
+  &:not(:last-child) {
+    border-right: 1px solid $color_border;
+  }
+
+  &_header {
+    font-weight: bold;
+  }
+}

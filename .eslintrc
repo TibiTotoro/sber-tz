@@ -14,6 +14,8 @@
     // OFF RULES
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
+    "no-unused-expressions": "off",
+    "import/no-unresolved": "off",
     // WARN
     "compat/compat": "warn",
     // ERROR RULES
@@ -26,7 +28,7 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
     "max-lines": ["error", { "max": 300, "skipBlankLines": true }],
     "import/extensions": [
-      "error",
+      "off",
       "ignorePackages",
       {
         "js": "never",
@@ -44,6 +46,15 @@
   "globals": {},
   "settings": {
     "import/resolver": {
+      "alias": {
+        "map": [
+          ["~src", "src"],
+          ["~components", "src/components"],
+          ["~context", "src/context"],
+          ["~styles", "src/styles"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }, 
       "node": {
         "extensions": [".js", ".jsx", ".json"],
         "moduleDirectory": ["node_modules", "src"]

@@ -7,3 +7,5 @@ const date = new Date();
 date.setDate(date.getDate() - PERIOD);
 export const START_DATE = date;
 export const TODAY = new Date();
+
+export const BASE_CUR = 'RUB';
