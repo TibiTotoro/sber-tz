@@ -108,7 +108,7 @@ module.exports = (env, argv) => ({
         extensions: ['.js', '.jsx', '.json', '.scss'],  
         alias: {
             '~src': path.resolve(__dirname, "src"),
-            '~copmponents': path.resolve(__dirname, "src/copmponents"),
+            '~components': path.resolve(__dirname, "src/components"),
             '~styles': path.resolve(__dirname, "src/styles/"),
             '~context': path.resolve(__dirname, "src/context/"),
         }    
