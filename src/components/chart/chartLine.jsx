@@ -16,7 +16,6 @@ export const ChartLine = ({ renderData, xScale, yScale }) => {
 
     lines.exit().remove();
 
-    // enter any new data
     lines
       .enter()
       .append('path')
@@ -25,7 +24,6 @@ export const ChartLine = ({ renderData, xScale, yScale }) => {
       .attr('d', line)
       .style('stroke', () => `#${Math.floor(Math.random() * 0.5 * 16777215).toString(16)}`)
       .style('stroke-width', '1.5')
-      // Update new data
       .merge(lines)
       .transition()
       .duration(1500)
