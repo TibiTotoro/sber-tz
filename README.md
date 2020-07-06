@@ -9,12 +9,12 @@
 `npm run start`
 
 * Build app continuously (HMR enabled)
-* App served @ `http://localhost:8080`
+* App served @ `http://localhost:3100`
 
 **Production**
 
 `npm run build`
 
-* Build app once (HMR disabled) to `/build/`
+* Build app once (HMR disabled) to `/public/`
 
 

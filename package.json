@@ -22,11 +22,6 @@
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
     "lint:css": "stylelint \"src/**/*.scss\" --cache"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:js && npm run lint:css"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.5%",
@@ -66,7 +61,6 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.2",
     "express": "^4.17.1",
-    "favicons-webpack-plugin": "^3.0.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
     "husky": "^4.2.5",
@@ -96,10 +90,16 @@
     "body-scroll-lock": "^3.0.2",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
+    "d3": "^5.16.0",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0",
     "url-parse": "^1.4.7"
+  },
+  "husky": {	
+    "hooks": {	
+      "pre-commit": "npm run lint:js && npm run lint:css"	
+    }	
   }
 }

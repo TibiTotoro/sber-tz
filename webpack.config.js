@@ -1,14 +1,14 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => ({
     entry: path.resolve(__dirname, "src/index.jsx"), 
     output: {
         path: path.resolve(__dirname, "public"),
-        filename: "[name].js",
+        filename: "[name].[contenthash].js",
     },
     module: {
         rules: [{
@@ -114,19 +114,20 @@ module.exports = (env, argv) => ({
         }    
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Сбербанк - тестовое',
+            title: 'Курс валют',
             meta: {
               description:
-                'Сбербанк - тестовое',             
+                'Курс валют',             
             },
-            template: 'src/index.html',            
+            template: 'src/index.html', 
+            favicon: 'src/assets/icon/icon512.png'          
           }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].[contenthash].css"
-        }),
-        new FaviconsWebpackPlugin('src/assets/icon/icon512.png')
+        }),       
     ],
     optimization: {
         minimize: true,

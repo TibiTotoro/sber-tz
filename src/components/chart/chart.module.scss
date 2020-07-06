@@ -1,0 +1,30 @@
+@import '~styles/variables.scss';
+@import '~styles/mixins.scss';
+
+.wrapper {
+  padding-bottom: 100px;
+  @include mq($xs_bp) {
+    max-width: 600px;
+  }
+
+  @include mq($md_bp) {
+    flex: 1 0 600px;
+    margin-right: 40px;
+  }
+}
+
+.svg {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  margin-left: 10px;
+  border-bottom: 1px solid $color_border;
+  background: GhostWhite;
+  box-shadow: 0 1px 3px rgba(97, 139, 241, 0.12), 0 1px 2px rgba(21, 46, 81, 0.24);
+}
+
+.xAxis {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
