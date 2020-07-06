@@ -96,5 +96,10 @@
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0",
     "url-parse": "^1.4.7"
+  },
+  "husky": {	
+    "hooks": {	
+      "pre-commit": "npm run lint:js && npm run lint:css"	
+    }	
   }
 }

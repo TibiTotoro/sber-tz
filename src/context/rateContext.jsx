@@ -31,7 +31,7 @@ const RateProvider = ({ children }) => {
           setChartX(chartX + 1);
           message.x = chartX;
           date.setDate(date.getDate() + 1);
-          setData(() => new Map(data.set(formatDate(date), message)));         
+          setData(() => new Map(data.set(formatDate(date), message)));
         }
       }
       subscribe();
