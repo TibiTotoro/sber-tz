@@ -12,8 +12,10 @@ export const AxisY = ({ scale, data }) => {
     if (svgG.empty()) {
       svgG.append('g').attr('class', 'y axis').call(yAxis);
     } else {
-      svgG.transition().duration(1500).call(yAxis);
+      svgG.transition().duration(1000).call(yAxis);
     }
+
+    svgG.select('.domain').attr('stroke', '#C0C0C0');
   }, [data]);
 
   return <g ref={gRef} className='y-axis' />;

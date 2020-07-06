@@ -23,7 +23,7 @@ export const ChartLine = ({ renderData, xScale, yScale }) => {
       .attr('class', 'line')
       .attr('fill', 'none')
       .attr('d', line)
-      .style('stroke', () => '#' + Math.floor(Math.random() * 16777215).toString(16))
+      .style('stroke', () => '#' + Math.floor(Math.random()*0.5 * 16777215).toString(16))
       .style('stroke-width', '1.5')
       // Update new data
       .merge(lines)

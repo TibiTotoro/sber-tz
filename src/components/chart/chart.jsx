@@ -52,8 +52,7 @@ export const Chart = () => {
     const currentMax = cv.reduce((pv, cv) => Math.max(pv, cv.y), 50);
     return Math.max(pv, currentMax);
   }, 0);
-
-  yScale.domain([yMin - 10, yMax + 10]);
+  renderData[0].length === 0 ? yScale.domain([60, 90]) : yScale.domain([yMin - 10, yMax + 10]);
 
   return (
     <div className={styles.wrapper}>
