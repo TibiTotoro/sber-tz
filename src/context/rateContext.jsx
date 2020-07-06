@@ -7,12 +7,15 @@ const RateContext = createContext(null);
 
 const RateProvider = ({ children }) => {
   const [data, setData] = useState(new Map());
+  const [chartX, setChartX] = useState(1);
 
   useEffect(() => {
     const date = START_DATE;
+
     if (date > TODAY) {
       return;
     }
+
     const id = setTimeout(() => {
       async function subscribe() {
         const response = await fetch(`${API_URL}${formatDate(date)}?base=${BASE_CUR}`);
@@ -23,8 +26,12 @@ const RateProvider = ({ children }) => {
           await subscribe();
         } else {
           const message = await response.json();
-          setData(() => new Map(data.set(formatDate(date), message)));
+          const dateCopy = new Date(date);
+          message.date = dateCopy;
+          setChartX(chartX + 1);
+          message.x = chartX;
           date.setDate(date.getDate() + 1);
+          setData(() => new Map(data.set(formatDate(date), message)));         
         }
       }
       subscribe();

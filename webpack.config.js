@@ -115,10 +115,10 @@ module.exports = (env, argv) => ({
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Сбербанк - тестовое',
+            title: 'Курс валют',
             meta: {
               description:
-                'Сбербанк - тестовое',             
+                'Курс валют',             
             },
             template: 'src/index.html',            
           }),
