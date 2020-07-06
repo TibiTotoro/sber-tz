@@ -7,7 +7,7 @@ const RateContext = createContext(null);
 
 const RateProvider = ({ children }) => {
   const [data, setData] = useState(new Map());
-  const [chartX, setChartX] = useState(1);
+  const [chartX, setChartX] = useState(0);
 
   useEffect(() => {
     const date = START_DATE;

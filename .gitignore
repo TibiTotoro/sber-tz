@@ -4,5 +4,5 @@ node_modules/
 # Project
 .eslintcache
 .stylelintcache
-build/
+public/
 *.iml
